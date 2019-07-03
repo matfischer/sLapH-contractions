@@ -389,6 +389,7 @@ void OperatorFactory::read_vdaggerv(const int config) {
 
   swatch.print();
   is_vdaggerv_set = true;
+  exit(1);
 }
 
 void OperatorFactory::read_vdaggerv_liuming(const int config) {
