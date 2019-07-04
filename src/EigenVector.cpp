@@ -53,9 +53,14 @@ void EigenVector::read_eigen_vector(const std::string &filename,
         if (!infile) {
           throw std::runtime_error("Problem while reading Eigenvectors!");
         }
+	double norm = 0;
         for (ssize_t nrow = 0; nrow < V[t].rows(); ++nrow) {
           (V[t])(nrow, ncol) = eigen_vec[nrow];
+	  norm += pow(abs(eigen_vec[nrow]),2);
         }
+	if(std::sqrt(norm)!=1 || std::sqrt(norm)!=0){
+		std::runtime_error("Norm of Eigenvector is incorrect or Eigenvecotr is 0!");
+	}
       }
     } else {
       throw std::runtime_error("Eigenvector file does not exist!");
