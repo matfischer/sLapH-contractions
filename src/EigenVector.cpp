@@ -58,7 +58,7 @@ void EigenVector::read_eigen_vector(const std::string &filename,
           (V[t])(nrow, ncol) = eigen_vec[nrow];
 	  norm += pow(abs(eigen_vec[nrow]),2);
         }
-	if(std::sqrt(norm)!=1 || std::sqrt(norm)!=0){
+	if(std::sqrt(norm)!=1 || std::sqrt(norm)==0){
 		std::runtime_error("Norm of Eigenvector is incorrect or Eigenvecotr is 0!");
 	}
       }
