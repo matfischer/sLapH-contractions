@@ -47,9 +47,9 @@ int main(int ac, char *av[]) {
   // Creating instances of perambulators, random vectors, operators, and
   // correlators. The eigenvectors are read from disc in the operator class.
   //
-  /*Perambulator perambulators(gd.peram_construct.nb_entities,
+  Perambulator perambulators(gd.peram_construct.nb_entities,
                              gd.peram_construct.size_rows,
-                             gd.peram_construct.size_cols);*/
+                             gd.peram_construct.size_cols);
   RandomVector randomvectors(gd.rnd_vec_construct.nb_entities,
                              gd.rnd_vec_construct.length);
 
@@ -90,7 +90,7 @@ int main(int ac, char *av[]) {
     meson_operators.create_operators(gd.filename_eigenvectors, randomvectors, config_i);
 
     // doing all the contractions
-    /*ntract(gd.Lt,
+    contract(gd.Lt,
              (gd.quarks)[0].number_of_dilution_T,
              (gd.quarks)[0].number_of_dilution_E,
              gd.number_of_eigen_vec,
@@ -103,6 +103,6 @@ int main(int ac, char *av[]) {
              gd.quarkline_lookuptable,
              gd.path_output,
              gd.filename_ending_correlators,
-             gd.single_time_slice_combination);*/
+             gd.single_time_slice_combination);
   } 
 }
